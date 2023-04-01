@@ -7,8 +7,11 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
-        Student student = context.getBean(Student.class);
+//        Student student = context.getBean(Student.class); or, below
+        Student student = (Student) context.getBean("student");
+
         System.out.println(student);
+
 
     }
 }
